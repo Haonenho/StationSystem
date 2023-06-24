@@ -1,0 +1,71 @@
+body {
+    background-size: cover;
+    padding-top: 20px;
+}
+
+body {
+    background: url("../images/QQ图片20230621003709.png") no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+span{
+    margin-top: 100px;
+    font: 25px "myFont";
+}
+@font-face {
+    font-family: myFont;
+    src: url("fonts/STKAITI.TTF");
+}
+form {
+    background-color: white;
+    width: 343px;
+    height: 200px;
+    margin: 200px 453px;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 20px 10px 10px 0 rgba(0, 0, 0, 0.5)
+}
+
+input {
+    border: rgba(255, 255, 255, 0.85);
+    transition: 400ms;
+    width: 300px;
+    height: 30px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.user_input {
+    background-color: #f2f6f8;
+}
+
+.user {
+    padding-top: 30px;
+}
+
+.footer input {
+    width: 50px;
+    height: 34px;
+}
+
+input[type=submit] {
+    cursor: pointer;
+}
+
+input:focus {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+    border-radius: 4px;
+    background-color: #126de3;
+    color: white;
+}
+.btn:active{
+    transform: scale(1.15);
+}
+.btn:hover {
+    background: rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" content="text/html" http-equiv="Content-Type">
+    <title>火车站官网</title>
+    <script src="js/jquery-3.7.0.js" type="text/javascript"></script>
+    <script src="js/homeJs.js" type="text/javascript"></script>
+    <link href="css/homeCss.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="navbar">
+    <ul>
+        <li><a href="#" onclick="showContent('content1')">首页</a></li>
+        <li><a href="#" onclick="showContent('content2')">搜索历史</a></li>
+        <li><a href="#" onclick="showContent('content3')">订购</a></li>
+        <li><a href="#" onclick="showContent('content4')">联系我们</a></li>
+    </ul>
+</div>
+<!--主体-->
+<div class="content" id="content1">
+    <div class="user_body">
+
+        <form action="SS" method="post">
+            <div class="user">
+                <br>
+                <span class="search_title">按终点站查询</span>
+                <br>
+                <span>终点站:</span>
+                <input class="search_text" name="endStation" id="search_endStation" placeholder="例：北京" type="text"/>
+                <br>
+                <input class="btn" id="es_search" name="stationSearch" type="button" onclick="searchEs()" value="查询">
+                <br>
+                <br>
+                <span class="search_title">按班号查询</span>
+                <br>
+                <span>班号：</span>
+                <input class="search_text" name="id" id="search_id" placeholder="例：1" type="text"/>
+                <br>
+                <input class="btn" id="id_search" name="idSearch" type="button" value="查询" onclick="searchId()">
+            </div>
+        </form>
+        <h1 class="welcome_text">欢迎您！</h1>
+    </div>
+    <div class="foot_icon">
+        <img alt="wifi" class="icon" src="css/icons/feed.svg">
+        <img alt="vibrate" class="icon" src="css/icons/vibrate.svg">
+        <img alt="broadcast" class="icon" src="css/icons/broadcast.svg">
+        <img alt="communication" class="icon" src="css/icons/user-group.svg">
+    </div>
+</div>
+<div class="content hidden" id="content2">
+    <table class="shou_table" id="station_table">
+        <tr>
+            <th>编号</th>
+            <th>出发时间</th>
+            <th>起始站</th>
+            <th>到达站</th>
+            <th>额定容量</th>
+            <th>人数</th>
+            <th>选项</th>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>3:00</td>
+            <td>湘潭</td>
+            <td>北京</td>
+            <td>100</td>
+            <td>20</td>
+            <td>
+                <button class="row_buy" onclick="openModal()">购买</button>
+            </td>
+        </tr>
+    </table>
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <form id="buy_form">
+                <span class="buy_title">订购车票</span>
+                <br>
+                <span>乘客姓名：</span>
+                <input class="buy_text" id="name" name="name" required="required" type="text">
+                <br>
+                <span>出发时间：</span>
+                <input class="buy_text" id="startTime" name="startTime" readonly type="text">
+                <br>
+                <span>起始站点：</span>
+                <input class="buy_text" id="startStation" name="startStation" readonly type="text">
+                <br>
+                <span>到达站点：</span>
+                <input class="buy_text" id="endStation" name="endStation" readonly type="text">
+                <br>
+                <span>火车编号：</span>
+                <input class="buy_text" id="id" name="id" readonly type="text">
+                <br>
+                <input class="row_buy_yes" type="button" value="购买">
+            </form>
+        </div>
+    </div>
+</div>
+<div class="content hidden" id="content3">
+    <table class="shou_table" id="ticket_table">
+        <tr>
+            <th>姓名</th>
+            <th>时间</th>
+            <th>起始站</th>
+            <th>到达站</th>
+            <th>火车编号</th>
+            <th>选项</th>
+        </tr>
+        <tr>
+            <td>John Doe</td>
+            <td>5：00</td>
+            <td>湘潭</td>
+            <td>北京</td>
+            <td>1</td>
+            <td>
+                <button class="row_download">下载</button>
+                <button class="row_delete">取消订单</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="content hidden" id="content4">
+    <div class="h1" id="communication">
+        <p>要想联系我们，请拨打这个电话号码：</p>
+    </div>
+</div>
+</body>
+</html>

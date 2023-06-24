@@ -1,0 +1,253 @@
+
+/*顶部菜单栏*/
+body {
+    background: url("../images/200315113201-7.jpg") no-repeat;
+    background-size:cover;
+    margin-top: 20px;
+}
+
+.navbar {
+    position: fixed;
+    margin-top: -125px;
+    margin-left: -15px;
+    width: 105%;
+    z-index: 3;
+    background-color: #333;
+    overflow: hidden;
+    text-align: center;
+    transition: 200ms;
+}
+.navbar ul{
+    text-align: center;
+    list-style-type: none;
+}
+.navbar li{
+    display: inline-block;
+    text-align: center;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+.navbar a {
+    transition: 400ms;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    transform: scale(1.05);
+    background-color: #ddd;
+    color: black;
+}
+
+.navbar .navbar_text {
+    color: #f1f1f1;
+}
+/*主体*/
+.hidden {
+    display: none;
+}
+/*表单提交*/
+.user_body {
+    width: 800px
+}
+
+.user_body form {
+
+    font-size: 10px;
+    background-color: white;
+    width: 450px;
+    height: 268px;
+    margin: 125px 100px;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 20px 10px 10px 0 rgba(0, 0, 0, 0.5)
+}
+
+.user input {
+    border: rgba(255, 255, 255, 0.85);
+    transition: 400ms;
+    width: 250px;
+    height: 30px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+
+.user {
+    padding-top: 10px;
+}
+
+.footer input {
+    width: 50px;
+    height: 34px;
+}
+
+input[type=submit] {
+    cursor: pointer;
+}
+.search_title{
+    font-size: 15px;
+}
+.search_text{
+    background-color: #f2f6f8;
+}
+.search_text:focus {
+    background-color: rgba(0, 0, 0, 0.2);
+
+}
+
+.btn {
+    border-radius: 4px;
+    background-color: #126de3;
+    color: white;
+}
+
+.btn:active {
+    transform: scale(1.15);
+}
+
+.btn:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/*欢迎字体*/
+.welcome_text {
+    font: 125px "myFont";
+    color: #f1f1f1;
+    position: absolute;
+    top: 110px;
+    left: 730px;
+    float: right;
+}
+@font-face {
+    font-family: myFont;
+    src: url("fonts/FZSTK.TTF");
+}
+/*底部图标*/
+.foot_icon{
+    text-align: center;
+}
+.icon{
+    padding-left: 120px;
+}
+.shou_table,.h1 {
+    margin: 125px 100px;
+}
+#communication{
+    margin-left: 233px;
+    width: 800px;
+    height: 400px;
+    background-color: white;
+    border-radius: 10px;
+}
+/*图二表格*/
+table {
+    text-align: right;
+    width: 80%;
+
+
+}
+
+.shou_table {
+    border-radius: 5px;
+}
+
+tr {
+    border-radius: 5px;
+    transition: background-color 200ms;
+}
+
+th, td {
+    border-radius: 5px;
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid white;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+th {
+
+    background-color: #224575;
+    color: white;
+}
+td{
+    background-color: #dee3ee;
+}
+/*弹出式窗口*/
+.modal {
+    display: none; /* 初始状态隐藏 */
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    height: 156px;
+    border-radius: 10px;
+}
+
+.close {
+    transition: 400ms;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    transform: rotate(180deg);
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.buy_form{
+    text-align: center;
+}
+.buy_form input{
+    margin-top: 50px;
+padding-top: 50px;
+}
+.row_buy_yes{
+    margin-top: 7px;
+    margin-left: 100px;
+    height: 25px;
+    width: 100px;
+    background-color: #126de3;
+    color: white;
+    border-radius: 3px;
+    border: #f1f1f1;
+    text-align: center;
+    transition: 400ms;
+}
+.row_buy_yes:hover{
+    background: rgba(0, 0, 0, 0.2);
+}
+.row_buy_yes:active{
+    transform: scale(1.10);
+}
+.buy_text{
+
+}
+.buy_title{
+    margin-bottom: 7px;
+    margin-left: 115px
+}
+/*图三*/

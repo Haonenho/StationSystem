@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/src/cn/s0228/jdbc/dao/StationDao.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/cn/s0228/jdbc/dao/TicketDao.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/cn/s0228/jdbc/dao/UserDAO.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/cn/s0228/servlet/manager/StationJSONServlet.java" dialect="GenericSQL" />
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/cef6ddff-ca68-4349-995b-11795dc83727/console_3.sql" dialect="MySQL" />
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/fb0498be-fe95-4885-a310-b3a0f0016434/console.sql" dialect="MySQL" />
+  </component>
+</project>

@@ -1,0 +1,26 @@
+body{
+    text-align: center;
+}
+table{
+    margin: auto;
+}
+.navbar {
+    background-color: #3c6c6c;
+    overflow: hidden;
+}
+
+.navbar a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+h1{
+    margin: 125px 100px;
+}

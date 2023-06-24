@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" content="text/html" http-equiv="Content-Type">
+    <link href="css/managerCss.css" rel="stylesheet" type="text/css">
+    <title>火车站管理系统</title>
+    <script src="js/jquery-3.7.0.js" type="text/javascript"></script>
+    <script src="js/managerJs.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="navbar">
+    <h3 class="navbar_text">火车站管理系统</h3>
+</div>
+<div class="sidebar">
+    <img alt="头像" class="person_img" src="images/QQ图片20230620202158.png">
+    <ul>
+
+        <li class="sidebar_select"><a href="#" onclick="showContent('content1')">班次管理</a></li>
+        <li class="sidebar_select"><a href="#" onclick="showContent('content2')">订票管理</a></li>
+        <li class="sidebar_select"><a href="#" onclick="showContent('content3')">用户管理</a></li>
+    </ul>
+</div>
+<div class="content" id="content1">
+    <form class="show_form">
+        <input class="insert_button" onclick="station_addRow()" type="button" value="添加班次"/>
+
+    </form>
+    <table class="shou_table" id="station_table">
+        <tr>
+            <th>编号</th>
+            <th>出发时间</th>
+            <th>起始站</th>
+            <th>到达站</th>
+            <th>额定容量</th>
+            <th>人数</th>
+            <th>选项</th>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>3:00</td>
+            <td>湘潭</td>
+            <td>北京</td>
+            <td>100</td>
+            <td>20</td>
+            <td>
+                <button class="row_edit">Edit</button>
+                <button class="row_delete">Delete</button>
+            </td>
+        </tr>
+        <tr>
+            <td>02</td>
+            <td>3:00</td>
+            <td>湘潭</td>
+            <td>北京</td>
+            <td>100</td>
+            <td>20</td>
+            <td>
+                <button class="row_edit">Edit</button>
+                <button class="row_delete">Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<!--订票管理-->
+<div class="content hidden" id="content2">
+    <form class="show_form">
+        <span>按姓名查询</span>
+        <label>
+            <input class="id_search" name="searchId" type="text">
+        </label>
+        <button class="search_button">查询</button>
+        <input class="insert_button" onclick="ticket_addRow()" type="button" value="添加用户"/>
+    </form>
+    <table class="shou_table" id="ticket_table">
+        <tr>
+            <th>姓名</th>
+            <th>时间</th>
+            <th>起始站</th>
+            <th>到达站</th>
+            <th>火车编号</th>
+            <th>选项</th>
+        </tr>
+        <tr>
+            <td>John Doe</td>
+            <td>5：00</td>
+            <td>湘潭</td>
+            <td>北京</td>
+            <td>1</td>
+            <td>
+                <button class="row_edit">Edit</button>
+                <button class="row_delete">Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<!--用户管理-->
+<div class="content hidden" id="content3">
+    <form class="show_form">
+        <span>按姓名查询</span>
+        <label>
+            <input class="id_search" name="searchId" type="text">
+        </label>
+        <button class="search_button">查询</button>
+        <input class="insert_button" onclick="user_addRow()" type="button" value="添加用户"/>
+    </form>
+    <table class="shou_table" id="user_table">
+        <tr>
+            <th>姓名</th>
+            <th>密码</th>
+            <th>操作</th>
+        </tr>
+        <tr>
+            <td>John Doe</td>
+            <td>johndoe@example.com</td>
+            <td>
+                <button class="row_edit">Edit</button>
+                <button class="row_delete">Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
