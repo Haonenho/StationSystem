@@ -25,7 +25,11 @@ public class UserDeleteServlet extends HttpServlet {
         String name=request.getParameter("value");
         System.out.println(name);
         if(name!=null) {
-            userDAO.deleteDao(name);
+            try {
+                userDAO.deleteDao(name);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
             System.out.println("已删除");
         }
     }

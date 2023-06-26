@@ -52,7 +52,11 @@ public class UserDAO {
         return rowsAffected > 0;
     }
 
-    public void deleteDao(String name) {
+    public boolean deleteDao(String name) throws SQLException {
+        sql = "DELETE FROM user WHERE name = ?";
+        rowsAffected = runner.update(sql, name);
+
+        return rowsAffected > 0;
     }
 }
 
