@@ -45,6 +45,9 @@ body {
 .navbar .navbar_text {
     color: #f1f1f1;
 }
+#welcome{
+    color: white;
+}
 /*主体*/
 .hidden {
     display: none;
