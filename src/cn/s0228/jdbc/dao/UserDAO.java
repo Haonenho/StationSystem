@@ -51,5 +51,8 @@ public class UserDAO {
         }
         return rowsAffected > 0;
     }
+
+    public void deleteDao(String name) {
+    }
 }
 

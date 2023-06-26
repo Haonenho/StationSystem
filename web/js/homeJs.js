@@ -187,12 +187,14 @@ window.addEventListener('DOMContentLoaded', function () {
                 var row = event.target.parentNode.parentNode;
                 var cell = row.firstElementChild;
                 var name = cell.innerHTML;
+                alert("已取消订单");
                 //     Ajax
                 $.ajax({
                     url: 'http://localhost:8080/S0228/TDS',
                     type: 'POST',
                     data: {value: name},
                     success: function (data) {
+                        alert("已取消订单");
                         row.parentNode.removeChild(row);
                         console.log("完成");
                     },

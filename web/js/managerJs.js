@@ -34,7 +34,7 @@ $.ajax({
         console.log('Error:', error);
     }
 });
-//用户获取
+//订票获取
 $.ajax({
     url: 'http://localhost:8080/S0228/T-JOS',
     type: 'GET',
@@ -58,6 +58,28 @@ $.ajax({
             cell.innerHTML = "<button class='row_edit'>Edit</button><button class='row_delete'>Delete</button>";
             console.log(data[station].startStation);
             console.log(data[station].startStation);
+        }
+
+    },
+    error: function (xhr, status, error) {
+        console.log('Error:', error);
+    }
+});
+$.ajax({
+    url: 'http://localhost:8080/S0228/U-JOS',
+    type: 'GET',
+    dataType: 'json',
+    success: function (data) {
+        console.log(data);
+        var table = document.getElementById("user_table");
+        for (var user in data) {
+            var row = table.insertRow();
+            var cell = row.insertCell();
+            cell.innerHTML = data[user].name
+            cell = row.insertCell();
+            cell.innerHTML = data[user].password;
+            cell = row.insertCell();
+            cell.innerHTML = "<button class='row_edit'>Edit</button><button class='row_delete'>Delete</button>";
         }
 
     },
@@ -235,9 +257,9 @@ window.addEventListener('DOMContentLoaded', function () {
                 var name = cell.innerHTML;
                 console.log(name);
                 $.ajax({
-                    url: 'http://localhost:8080/S0228/T-JOS',
-                    type: 'GET',
-                    dataType: name,
+                    url: 'http://localhost:8080/S0228/tds',
+                    type: 'POST',
+                    data: {value: name},
                     success: function (data) {
                         console.log("完成");
                     },
@@ -310,9 +332,9 @@ window.addEventListener('DOMContentLoaded', function () {
                 var name = cell.innerHTML;
                 console.log(name);
                 $.ajax({
-                    url: 'http://localhost:8080/S0228/U-JOS',
-                    type: 'GET',
-                    dataType: name,
+                    url: 'http://localhost:8080/S0228/uds',
+                    type: 'POST',
+                    data: {value:name},
                     success: function (data) {
                         console.log("完成");
                     },
