@@ -38,7 +38,21 @@ function searchEs() {
         }
     });
 }
+function name() {
+    var url = "http://localhost:8080/S0228/getSession";
 
+    $.ajax({
+        url: url,
+        type: "POST",
+        success: function(response) {
+             // 假设响应中直接包含登录信息
+            console.log(response);
+        },
+        error: function(xhr, status, error) {
+            console.error(error);
+        }
+    });
+}
 function searchId() {
 
     var url = "http://localhost:8080/S0228/ISS";
@@ -109,6 +123,8 @@ function add_ticket(jsonString) {
 
 
 function openModal() {
+    name();
+
     document.getElementById("myModal").style.display = "block";
 }
 

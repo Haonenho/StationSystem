@@ -1,14 +1,17 @@
 package cn.s0228.servlet.loginAndRegister;
 
-import cn.s0228.bean.User;
 import cn.s0228.jdbc.dao.UserDAO;
 import cn.s0228.jdbc.utils.C3p0Utils;
 import org.apache.commons.dbutils.QueryRunner;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 
 @WebServlet(name = "loginServlet", value = "/loginServlet")
@@ -27,10 +30,7 @@ public class LoginServlet extends HttpServlet {
         try {
             boolean rowsAffected=userDAO.checkDao(name,password);
             if(rowsAffected){
-                User user=new User();
-                user.setName(name);
-                user.setPassword(password);
-                request.getSession().setAttribute("user",user);
+                request.getSession().setAttribute("name",name);
 //                发送cookie
                 String autoLogin=request.getParameter("autoLogin");
                 if (autoLogin!=null){
@@ -39,6 +39,10 @@ public class LoginServlet extends HttpServlet {
                     response.addCookie(cookie);
                 }
                 response.sendRedirect("home.html");
+                PrintWriter out=response.getWriter();
+                out.print(name);
+                out.flush();
+                out.close();
             }else {
                 response.sendRedirect("login.html");
             }

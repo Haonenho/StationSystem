@@ -22,11 +22,10 @@ public class StationDao {
         rowsAffected = runner.update(sql, id, startTime, startStation, endStation, capacity,member);
     }
 
-    public boolean deleteDao(String id) throws SQLException {
+    public void deleteDao(String id) throws SQLException {
         sql = "DELETE FROM station WHERE id = ?";
         rowsAffected = runner.update(sql, id);
 
-        return rowsAffected > 0;
     }
 
     public boolean updateDao(int id, int newId, String startTime, String startStation, String endStation, String capacity,String member) throws SQLException {
