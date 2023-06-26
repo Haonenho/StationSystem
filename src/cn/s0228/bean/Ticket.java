@@ -6,6 +6,7 @@ public class Ticket {
     String startStation;
     String endStation;
     int id;
+    String buyName;
 
     public Ticket() {
     }
@@ -48,5 +49,13 @@ public class Ticket {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getBuyName() {
+        return buyName;
+    }
+
+    public void setBuyName(String buyName) {
+        this.buyName = buyName;
     }
 }

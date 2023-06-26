@@ -38,16 +38,23 @@ function searchEs() {
         }
     });
 }
-$.get('http://localhost:8080/S0228/getSession', function(response) {
-    // 处理服务器端发送的字符串数据
-    console.log("success");
-    console.log(response);
-    var navbar=document.getElementById("navbar");
-    navbar.innerHTML="<span id='welcome'>欢迎您"+response+"</span>";
+
+$.get('http://localhost:8080/S0228/getSession', function (response) {
+    if (response != null && response !== "") {
+        // 处理服务器端发送的字符串数据
+        console.log("success");
+        console.log(response);
+        var ul = document.getElementById("navbar_ul");
+        ul.innerHTML += "<li id='welcome'><a>欢迎您" + response + "!</a>";
+        console.log(response);
+    } else {
+        window.location.href = "http://localhost:8080/S0228/login.html"
+    }
 })
-    .fail(function(xhr, status, error) {
+    .fail(function (xhr, status, error) {
         console.error(error);
     });
+
 function searchId() {
 
     var url = "http://localhost:8080/S0228/ISS";
@@ -103,17 +110,34 @@ function showContent(contentId) {
 
 
 function add_ticket(jsonString) {
-    console.log(jsonString);
-    var jsonData = JSON.parse(jsonString);
-    var table = document.getElementById("ticket_table");
-    var row = table.insertRow();
+    $.get('http://localhost:8080/S0228/getSession', function (buyName) {
+        console.log(jsonString);
+        var jsonData = JSON.parse(jsonString);
+        var jsonBackData=jsonData;
+        var table = document.getElementById("ticket_table");
+        var row = table.insertRow();
+        jsonBackData.buyName=buyName;
+        $.ajax({
+            url: 'http://localhost:8080/S0228/ATS',
+            type: 'POST',
+            data:JSON.stringify(jsonBackData) ,
+            success: function (data) {
+                for (var key in jsonData) {
+                    var cell = row.insertCell();
+                    cell.innerHTML = jsonData[key];
+                }
+                var lastCell = row.insertCell();
+                lastCell.innerHTML = "<button class='row_download'>下载</button>" + " <button class='row_delete'>取消订单</button>";
 
-    for (var key in jsonData) {
-        var cell = row.insertCell();
-        cell.innerHTML = jsonData[key];
-    }
-    var lastCell = row.insertCell();
-    lastCell.innerHTML = "<button class='row_download'>下载</button>" + " <button class='row_delete'>取消订单</button>";
+            },
+            error: function (xhr, status, error) {
+                console.log('Error:', error);
+            }
+        });
+
+
+    })
+
 }
 
 

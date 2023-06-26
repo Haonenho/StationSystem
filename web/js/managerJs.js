@@ -1,7 +1,5 @@
 // 表格获取
 //班次获取
-
-//订票获取
 $.ajax({
     url: 'http://localhost:8080/S0228/S-JOS',
     type: 'GET',
@@ -54,6 +52,8 @@ $.ajax({
             cell.innerHTML = data[station].endStation;
             cell = row.insertCell();
             cell.innerHTML = data[station].id;
+            cell = row.insertCell();
+            cell.innerHTML = data[station].buyName;
             cell = row.insertCell();
             cell.innerHTML = "<button class='row_edit'>Edit</button><button class='row_delete'>Delete</button>";
             console.log(data[station].startStation);
@@ -139,7 +139,9 @@ function ticket_addRow() {
     var td_5 = tr.insertCell(4);
     td_5.setAttribute("contenteditable", "true")
     var td_6 = tr.insertCell(5);
-    td_6.innerHTML = "<button  class='row_finish'>完成</button><button class='row_cancel'>取消</button>";
+    td_6.setAttribute("contenteditable", "true")
+    var td_7 = tr.insertCell(6);
+    td_7.innerHTML = "<button  class='row_finish'>完成</button><button class='row_cancel'>取消</button>";
 }
 
 // 用户管理
@@ -287,6 +289,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 startStation: cells[2].innerText,
                 endStation: cells[3].innerText,
                 id: cells[4].innerText,
+                buyName:cells[5].innerText,
             };
             var jsonData = JSON.stringify(rowData);
             console.log(jsonData);

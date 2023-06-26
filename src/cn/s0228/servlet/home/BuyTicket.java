@@ -28,10 +28,11 @@ public class BuyTicket extends HttpServlet {
         String startStation=request.getParameter("startStation");
         String endStation=request.getParameter("endStation");
         String id=request.getParameter("id");
+        String buyName=request.getParameter("buyName");
         System.out.println(name+id+startStation+endStation+startTime);
         if(id!=null) {
             try {
-                ticketDao.insertDao(name, startTime, startStation, endStation, Integer.parseInt(id));
+                ticketDao.insertDao(name, startTime, startStation, endStation, Integer.parseInt(id),buyName);
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }

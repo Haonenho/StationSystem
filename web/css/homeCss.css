@@ -18,6 +18,7 @@ body {
     transition: 200ms;
 }
 .navbar ul{
+    margin-right: 0;
     text-align: center;
     list-style-type: none;
 }
@@ -27,7 +28,7 @@ body {
     margin-top: 1px;
     margin-bottom: 1px;
 }
-.navbar a {
+.select{
     transition: 400ms;
     border-radius: 5px;
     color: white;
@@ -36,7 +37,7 @@ body {
     text-decoration: none;
 }
 
-.navbar a:hover {
+.select:hover {
     transform: scale(1.05);
     background-color: #ddd;
     color: black;
@@ -47,6 +48,10 @@ body {
 }
 #welcome{
     color: white;
+    float: right;
+    width: 100px;
+    margin-bottom: 10px;
+    margin-right: 100px;
 }
 /*主体*/
 .hidden {

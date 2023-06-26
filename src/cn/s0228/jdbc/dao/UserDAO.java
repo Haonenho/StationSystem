@@ -40,11 +40,11 @@ public class UserDAO {
     }
 
     public boolean checkDao(String name, String password) throws SQLException {
-        sql = "SELECT * FROM user WHERE name=? AND password=?";
         List<User> users = queryDao();
         for (User user : users) {
             if (name.equals(user.getName()) && password.equals(user.getPassword())) {
                 rowsAffected = 1;
+                break;
             } else {
                 rowsAffected = 0;
             }

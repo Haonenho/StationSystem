@@ -17,12 +17,7 @@ public class GetSession extends HttpServlet {
         System.out.println(name+"666");
         if (name != null) {
             // 如果会话中有用户名属性，则表示已登录
-            response.setStatus(HttpServletResponse.SC_OK);
             response.getWriter().write(name);
-        } else {
-            // 如果会话中没有用户名属性，则表示未登录
-            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-            response.getWriter().write("Not logged in");
         }
     }
 

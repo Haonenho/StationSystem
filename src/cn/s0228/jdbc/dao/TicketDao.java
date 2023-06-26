@@ -17,16 +17,15 @@ public class TicketDao {
         this.runner = runner;
     }
 
-    public void insertDao(String name, String time, String startStation, String endStation, int id) throws SQLException {
-        sql = "INSERT INTO ticket (name,time,startStation,endStation,id) values (?,?,?,?,?)";
-        rowsAffected = runner.update(sql, name, time, startStation, endStation, id);
+    public void insertDao(String name, String time, String startStation, String endStation, int id,String buyName) throws SQLException {
+        sql = "INSERT INTO ticket (name,time,startStation,endStation,id,buyName) values (?,?,?,?,?,?)";
+        rowsAffected = runner.update(sql, name, time, startStation, endStation, id,buyName);
     }
 
-    public boolean deleteDao(String name) throws SQLException {
+    public void deleteDao(String name) throws SQLException {
         sql = "DELETE FROM ticket WHERE name = ?";
         rowsAffected = runner.update(sql,name);
 
-        return rowsAffected > 0;
     }
 
 
