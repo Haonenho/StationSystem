@@ -111,17 +111,19 @@ function showContent(contentId) {
 
 function add_ticket(jsonString) {
     $.get('http://localhost:8080/S0228/getSession', function (buyName) {
-        console.log(jsonString);
         var jsonData = JSON.parse(jsonString);
         var jsonBackData=jsonData;
         var table = document.getElementById("ticket_table");
         var row = table.insertRow();
         jsonBackData.buyName=buyName;
+        var json=JSON.stringify(jsonData)
+        console.log(json);
         $.ajax({
             url: 'http://localhost:8080/S0228/ATS',
             type: 'POST',
-            data:JSON.stringify(jsonBackData) ,
+            data:json ,
             success: function (data) {
+                console.log(jsonData);
                 for (var key in jsonData) {
                     var cell = row.insertCell();
                     cell.innerHTML = jsonData[key];

@@ -19,7 +19,7 @@ public class TicketDao {
 
     public void insertDao(String name, String time, String startStation, String endStation, int id,String buyName) throws SQLException {
         sql = "INSERT INTO ticket (name,time,startStation,endStation,id,buyName) values (?,?,?,?,?,?)";
-        rowsAffected = runner.update(sql, name, time, startStation, endStation, id,buyName);
+        rowsAffected = runner.update(sql, name, time, startStation, endStation,id,buyName);
     }
 
     public void deleteDao(String name) throws SQLException {
